@@ -15,7 +15,7 @@ npm install
 
 Antes de executar npm start, faça:
 ```sh
-> gulp
+$ gulp
 ```
 
 Após isso, rode a aplicação:
