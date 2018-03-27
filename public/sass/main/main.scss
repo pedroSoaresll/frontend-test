@@ -1,0 +1,13 @@
+@import './main-header.scss';
+@import './main-list';
+
+#section-main {
+  min-width: 430px;
+  max-width: 500px;
+  margin: 150px auto;
+
+  @media screen and (max-width: 480px) {
+    width: 100%;
+    max-width: 100%;
+  }
+}

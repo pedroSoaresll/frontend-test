@@ -1,5 +1,8 @@
 body {
   text-align: center;
   font-size: 12px;
-  font-family: "Arial, sans-serif";
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #272727;
 }

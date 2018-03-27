@@ -2,13 +2,76 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
+    <!-- title - SEO -->
     <title>R7 FrontEnd Test</title>
-
+    
+    <!-- css necessário no inicio do documento -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"> 
     <link rel="stylesheet" href="stylesheets/style.css" media="all">
+    <link rel="stylesheet" href="stylesheets/main/main.css" media="all">
   </head>
   <body>
       <!-- let's code :D -->
+      <!-- definindo escopo principal da página - SEO -->
+      <main>
 
-    <script src="javascripts/main.js"></script> 
+        <!-- corpo conteudo -->
+        <section id="section-main">
+          <!-- header presente - SEO -->
+          <header id="header">
+            <picture>
+              <img id="header-logo-fazenda" src="./assets/icone-fazenda.png" alt="A fazenda logo">
+            </picture>
+            
+            <div id="background-title">
+              <!-- Apenas 1 H1 existente por página - SEO -->
+              <h1 id="header-ranking">Ranking</h1>
+            </div>
+          </header>
+
+          <div id="list-ranking">
+            <div class="item-ranking">
+              <div class="area-photo">
+                <div class="ranking-picture" style="background-image: url('http://im.r7.com/record/files/2C96/1618/3F6E/369D/013F/72F7/CF15/5F4B/Gominho1.jpg')"></div>
+                <div class="position-circle">1</div>
+              </div>
+
+              <div class="area-info">
+                <span class="ranking-name">Gominho</span>
+                <span class="ranking-description">Fofoqueiro de Plantão</span>
+              </div>
+
+              <div class="tooltip-likes">
+                <div class="tooltip-side like">
+                  <header>Gostam</header>
+                  <div class="tooltip-body">
+                    <span class="percent">37%</span>
+                  </div>
+                </div>
+
+                <div class="tooltip-side nolike">
+                  <header>Não gostam</header>
+                  <div class="tooltip-body">
+                    <span class="percent">67%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    
+    <!-- chamadas de scripts no final do documento por questões de performance -->
+    <script src="javascripts/r7-com-app.min.js" charset="utf-8"></script>
+    <script src="javascripts/main.js" charset="utf-8"></script> 
+
+    <script>
+      window.addEventListener('load', function () {
+        var rankingListController = new RankingListController()
+        rankingListController.showRanking()
+      });
+    </script>
 </html>

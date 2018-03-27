@@ -1,0 +1,28 @@
+ #header {
+   position: relative;
+   max-width: 100%;
+   padding: 0px 30px;
+   display: flex;
+   justify-content: flex-start;
+   align-items: flex-end;
+   height: 65px;
+
+   #header-logo-fazenda {
+
+   }
+
+   #background-title {
+    background-color: #fff;
+    height: 52px;
+    margin-bottom: 12.2px;
+    width: 100%;
+    
+    #header-ranking {
+      text-transform: uppercase;
+      font-weight: bolder;
+      font-size: 22pt;
+      margin: 10px 0;
+      text-indent: -40px;
+    }
+   }
+ }
