@@ -23,14 +23,14 @@ class ItemRanking {
   getPositivePercent  () {
     if (this._positive == undefined || this._negative == undefined) return 0
 
-    let full = Number.parseFloat(this._positive) + Number.parseFloat(this._negative)
+    let full = parseFloat(this._positive) + parseFloat(this._negative)
     return ((this._positive * 100) / full).toFixed(0)
   }
 
   getNegativePercent () {
     if (this._positive == undefined || this._negative == undefined) return 0
 
-    let full = Number.parseFloat(this._positive) + Number.parseFloat(this._negative)
+    let full = parseFloat(this._positive) + parseFloat(this._negative)
     return ((this._negative * 100) / full).toFixed(0)
   }
 }
