@@ -7,7 +7,7 @@ class MainView {
     this.mounted()
   }
 
-  createNewItem (itemRanking, position) {
+  createNewItem (itemRanking) {
     if (this.itemRankingElement) {
       let listClone = this.itemRankingElement.cloneNode(true)
 
@@ -39,20 +39,22 @@ class MainView {
     // se o elemento for encontrado
     if (this.listRanking) {
       // cria os elementos
-      let elements = this._listItemRanking.map((item, index) => {
-        return this.createNewItem(item, index)
+      let elements = this._listItemRanking.map(item => {
+        return this.createNewItem(item)
       })
         // ordena a sequencia de acordo com "gostei"
         .sort(function(a, b){
           let percentA = a.querySelector('.tooltip-side.like .percent')
             .textContent
             .replace('%', '')
+
           let percentB = b.querySelector('.tooltip-side.like .percent')
             .textContent
             .replace('%', '')
 
           if(percentA > percentB) return -1;
           if(percentA < percentB) return 1;
+
           return 0;
         })
         // atribui a numeração da posição do item
@@ -64,9 +66,7 @@ class MainView {
           // tabindex para trocar item com TAB - Acessibilidade
           item.tabIndex = index + 1
 
-          if (index % 2) {
-            item.classList.add('background-gray')
-          }
+          if (index % 2) item.classList.add('background-gray')
 
           // adiciona item ao DOM
           this.listRanking.appendChild(item)

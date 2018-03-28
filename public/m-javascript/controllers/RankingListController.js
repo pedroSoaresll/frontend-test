@@ -11,12 +11,11 @@ class RankingListController {
 
   getRankingList (callback) {
     const http = new XMLHttpRequest();
-    http.open('GET', '/fazenda.json')
+    http.open('GET', '/fazenda.json', true)
     http.setRequestHeader('Content-type', 'text/html; charset=utf-8')
     http.onload = () => {
       if (http.status == 200) {
-        let jsonRankingList = JSON.parse(http.responseText)
-        callback(jsonRankingList)
+        callback(JSON.parse(http.responseText))
       } else {
         console.error('erro ao buscar lista de ranking')
       }

@@ -2,15 +2,29 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
     <!-- title - SEO -->
     <title>R7 FrontEnd Test</title>
+
+    <meta name="description" content="Veja a colocação dos artistas mais queridos do Brasil.">
+    <meta name="keywords" content="A Fazenda,Record Fazenda, Fazenda Record, Canal 7,Ranking Fazenda, Fazenda Ranking">
+    <meta name="author" content="R7.com">
+
+    <!-- share media social -->
+    <meta property="og:url" content="http://localhost:7007/index.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="A Fazenda - Ranking" />
+    <meta property="og:description" content="Veja a colocação dos artistas mais queridos do Brasil." />
+    <meta property="og:image" content="http://localhost:7007/assets/icone-fazenda.png" />
     
     <!-- css necessário no inicio do documento -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"> 
     <link rel="stylesheet" href="stylesheets/style.css" media="all">
     <link rel="stylesheet" href="stylesheets/main/main.css" media="all">
+
+    <link rel="manifest" href="/manifest.json">
   </head>
   <body>
       <!-- let's code :D -->
@@ -70,6 +84,16 @@
 
     <script>
       window.addEventListener('load', function () {
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('/sw.js').then(function(registration) {
+            // Registration was successful
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+          }).catch(function(err) {
+            // registration failed :(
+            console.log('ServiceWorker registration failed: ', err);
+          });
+        }
+
         var rankingListController = new RankingListController()
         rankingListController.showRanking()
       });

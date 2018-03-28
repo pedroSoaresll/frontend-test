@@ -17,7 +17,7 @@ class ItemRanking {
   }
 
   get description () {
-    return unescape(decodeURIComponent(this._description))
+    return this._description
   }
 
   getPositivePercent  () {
